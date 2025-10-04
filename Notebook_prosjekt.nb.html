@@ -1777,10 +1777,36 @@ that the chain in aperiodic.</p>
 means that we have a stationary distribution <span class="math inline">\(\pi = (\pi_S,\pi_I,\pi_R)\)</span>.</p>
 <p>If we further try to solve the equations <span class="math inline">\(\pi = \pi P\)</span> and <span class="math inline">\(\sum \pi_i = 1\)</span> which gives us the
 equations:</p>
+<p><span class="math inline">\(\pi_S = \pi_S(1 -\beta) + \pi_R
+\alpha\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\pi_S = \pi_R \alpha\)</span></p>
+<p><span class="math inline">\(\pi_I = \pi_S \beta + \pi_I(1 -
+\gamma)\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(\pi_I = \pi_S \beta\)</span></p>
+<p>Giving: <span class="math inline">\(\pi_s = \frac{\beta}{\gamma}
+\pi_S\)</span> and <span class="math inline">\(\pi_R =
+\frac{\beta}{\alpha} \pi_S\)</span></p>
+<p>We also have: $ _S + _I + _R = 1$ inserting the equations over we
+get:</p>
+<p><span class="math inline">\(\pi_S(1 + \frac{\beta}{\gamma} +
+\frac{\beta}{\alpha}) = 1\)</span></p>
+<p>which means that: <span class="math inline">\(\pi_S = \frac{1}{ 1 +
+\frac{\beta}{\gamma}+ \frac{\beta}{\alpha}}\)</span></p>
+<p>With <span class="math inline">\(\frac{\beta}{\gamma} = 0.1\)</span>,
+$ = 2$ we get: <span class="math inline">\(\pi_S = \frac{1}{3.1} =
+\frac{10}{31}\)</span> , <span class="math inline">\(\pi_I =
+\frac{1}{31}\)</span> and <span class="math inline">\(\pi_R =
+\frac{20}{31}\)</span></p>
+<p>If we assume a timestep is one day then the expected number of days
+in the different states are:</p>
+<p>S: <span class="math inline">\(365 \cot \frac{10}{31} =
+117.7\)</span> days</p>
+<p>I: <span class="math inline">\(365 \cdot \frac{1}{31} = 11.8\)</span>
+days</p>
+<p>R: <span class="math inline">\(365 \cdot \frac{20}{31} =
+235.5\)</span> days</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMgVGFzayBhKQ0KDQpXZSBoYXZlIFMgPSBzdXNwZWN0aWJsZSBmb3IgZ2V0dGluZyBpbmZlY3RlZCwgSSA9IGluZmVjdGVkLCBSID0gcmVjb3ZlcmVkL2ltbXVuZVwNCkFmdGVyIHN0dWR5aW5nIHRoZSB0cmFuc2l0aW9uIHByb2JhYmlsaXR5IG1hdHJpeCB3ZSBjYW4gY29uY2x1ZGUgdGhhdCB0aGUgZGlmZmVyZW50IHBhcmFtZXRlcnMgcmVwcmVzZW50czpcDQokXGJldGEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBpbmZlY3RlZCAkUyBccmlnaHRhcnJvdyQgSVwkDQoNCiRcZ2FtbWEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBoZWFsdHkgJEkgXHJpZ2h0YXJyb3cgUiQNCg0KJFxhbHBoYSQ6IFRoZSBwcm9iYWJpbGl0eSBvZiBiZWluZyBub3QgYmVpbmcgaW1tdW5lIGFueW1vcmUgJFIgXHJpZ2h0YXJyb3cgUyQNCg0KIyMjIFRhc2sgYikNCg0KV2l0aCAkXGJldGEgPSAwLjAxJCwgJFxnYW1tYSA9IDAuMTAkLCAkXGFscGhhID0gMC4wMDUkIHdlIGhhdmUgdGhlIG1hdHJpeDoNCg0KV2UgZnVydGhlciBoYXZlIHRoZSBwb3NzaWJsZSBzdGF0ZXMge1MsSSxSfSBhcyBhIHJlc3VsdCBvZiAkMSAtIFxiZXRhJCwgJDEgLSBcZ2FtbWEkLCAkMSAtIFxhbHBoYSQgYWxsIGJlaW5nIGdyYXRlciB0aGFuICQwJC4gV2hpY2ggbWVhbnMgdGhhdCB0aGUgY2hhaW4gaW4gYXBlcmlvZGljLg0KDQpGdXJ0aGVyIHdlIGhhdmUgYW4gZmluaXRlLCBpcnJlZHVjaWJsZSBhbmQgYXBlcmlvZGljIGNoYWluIHdoaWNoIG1lYW5zIHRoYXQgd2UgaGF2ZSBhIHN0YXRpb25hcnkgZGlzdHJpYnV0aW9uICRccGkgPSAoXHBpX1MsXHBpX0ksXHBpX1IpJC4NCg0KSWYgd2UgZnVydGhlciB0cnkgdG8gc29sdmUgdGhlIGVxdWF0aW9ucyAkXHBpID0gXHBpIFAkIGFuZCAkXHN1bSBccGlfaSA9IDEkIHdoaWNoIGdpdmVzIHVzIHRoZSBlcXVhdGlvbnM6DQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMgVGFzayBhKQ0KDQpXZSBoYXZlIFMgPSBzdXNwZWN0aWJsZSBmb3IgZ2V0dGluZyBpbmZlY3RlZCwgSSA9IGluZmVjdGVkLCBSID0gcmVjb3ZlcmVkL2ltbXVuZVwNCkFmdGVyIHN0dWR5aW5nIHRoZSB0cmFuc2l0aW9uIHByb2JhYmlsaXR5IG1hdHJpeCB3ZSBjYW4gY29uY2x1ZGUgdGhhdCB0aGUgZGlmZmVyZW50IHBhcmFtZXRlcnMgcmVwcmVzZW50czpcDQokXGJldGEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBpbmZlY3RlZCAkUyBccmlnaHRhcnJvdyQgSVwkDQoNCiRcZ2FtbWEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBoZWFsdHkgJEkgXHJpZ2h0YXJyb3cgUiQNCg0KJFxhbHBoYSQ6IFRoZSBwcm9iYWJpbGl0eSBvZiBiZWluZyBub3QgYmVpbmcgaW1tdW5lIGFueW1vcmUgJFIgXHJpZ2h0YXJyb3cgUyQNCg0KIyMjIFRhc2sgYikNCg0KV2l0aCAkXGJldGEgPSAwLjAxJCwgJFxnYW1tYSA9IDAuMTAkLCAkXGFscGhhID0gMC4wMDUkIHdlIGhhdmUgdGhlIG1hdHJpeDoNCg0KV2UgZnVydGhlciBoYXZlIHRoZSBwb3NzaWJsZSBzdGF0ZXMge1MsSSxSfSBhcyBhIHJlc3VsdCBvZiAkMSAtIFxiZXRhJCwgJDEgLSBcZ2FtbWEkLCAkMSAtIFxhbHBoYSQgYWxsIGJlaW5nIGdyYXRlciB0aGFuICQwJC4gV2hpY2ggbWVhbnMgdGhhdCB0aGUgY2hhaW4gaW4gYXBlcmlvZGljLg0KDQpGdXJ0aGVyIHdlIGhhdmUgYW4gZmluaXRlLCBpcnJlZHVjaWJsZSBhbmQgYXBlcmlvZGljIGNoYWluIHdoaWNoIG1lYW5zIHRoYXQgd2UgaGF2ZSBhIHN0YXRpb25hcnkgZGlzdHJpYnV0aW9uICRccGkgPSAoXHBpX1MsXHBpX0ksXHBpX1IpJC4NCg0KSWYgd2UgZnVydGhlciB0cnkgdG8gc29sdmUgdGhlIGVxdWF0aW9ucyAkXHBpID0gXHBpIFAkIGFuZCAkXHN1bSBccGlfaSA9IDEkIHdoaWNoIGdpdmVzIHVzIHRoZSBlcXVhdGlvbnM6DQoNCiRccGlfUyA9IFxwaV9TKDEgLVxiZXRhKSArIFxwaV9SIFxhbHBoYSQgJFxyaWdodGFycm93JCAkXHBpX1MgPSBccGlfUiBcYWxwaGEkDQoNCiRccGlfSSA9IFxwaV9TIFxiZXRhICsgXHBpX0koMSAtIFxnYW1tYSkkICRccmlnaHRhcnJvdyQgJFxwaV9JID0gXHBpX1MgXGJldGEkDQoNCkdpdmluZzogJFxwaV9zID0gXGZyYWN7XGJldGF9e1xnYW1tYX0gXHBpX1MkIGFuZCAkXHBpX1IgPSBcZnJhY3tcYmV0YX17XGFscGhhfSBccGlfUyQNCg0KV2UgYWxzbyBoYXZlOiAkIFxwaV9TICsgXHBpX0kgKyBccGlfUiA9IDEkIGluc2VydGluZyB0aGUgZXF1YXRpb25zIG92ZXIgd2UgZ2V0Og0KDQokXHBpX1MoMSArIFxmcmFje1xiZXRhfXtcZ2FtbWF9ICsgXGZyYWN7XGJldGF9e1xhbHBoYX0pID0gMSQNCg0Kd2hpY2ggbWVhbnMgdGhhdDogJFxwaV9TID0gXGZyYWN7MX17IDEgKyBcZnJhY3tcYmV0YX17XGdhbW1hfSsgXGZyYWN7XGJldGF9e1xhbHBoYX19JA0KDQpXaXRoICRcZnJhY3tcYmV0YX17XGdhbW1hfSA9IDAuMSQsICQgXGZyYWN7XGJldGF9e1xhbHBoYX0gPSAyJCB3ZSBnZXQ6ICRccGlfUyA9IFxmcmFjezF9ezMuMX0gPSBcZnJhY3sxMH17MzF9JCAsICRccGlfSSA9IFxmcmFjezF9ezMxfSQgYW5kICRccGlfUiA9IFxmcmFjezIwfXszMX0kDQoNCklmIHdlIGFzc3VtZSBhIHRpbWVzdGVwIGlzIG9uZSBkYXkgdGhlbiB0aGUgZXhwZWN0ZWQgbnVtYmVyIG9mIGRheXMgaW4gdGhlIGRpZmZlcmVudCBzdGF0ZXMgYXJlOg0KDQpTOiAkMzY1IFxjb3QgXGZyYWN7MTB9ezMxfSA9IDExNy43JCBkYXlzDQoNCkk6ICQzNjUgXGNkb3QgXGZyYWN7MX17MzF9ID0gMTEuOCQgZGF5cw0KDQpSOiAkMzY1IFxjZG90IFxmcmFjezIwfXszMX0gPSAyMzUuNSQgZGF5cw0K</div>
 
 
 
