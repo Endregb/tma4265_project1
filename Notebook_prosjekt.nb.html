@@ -1752,33 +1752,35 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a>
-Notebook. When you execute code within the notebook, the results appear
-beneath the code.</p>
-<p>Try executing this chunk by clicking the <em>Run</em> button within
-the chunk or by placing your cursor inside it and pressing
-<em>Ctrl+Shift+Enter</em>.</p>
+<div id="task-a" class="section level3">
+<h3>Task a)</h3>
+<p>We have S = suspectible for getting infected, I = infected, R =
+recovered/immune<br />
+After studying the transition probability matrix we can conclude that
+the different parameters represents:<br />
+<span class="math inline">\(\beta\)</span>: The probability of getting
+infected <span class="math inline">\(S \rightarrow\)</span> I$</p>
+<p><span class="math inline">\(\gamma\)</span>: The probability of
+getting healty <span class="math inline">\(I \rightarrow R\)</span></p>
+<p><span class="math inline">\(\alpha\)</span>: The probability of being
+not being immune anymore <span class="math inline">\(R \rightarrow
+S\)</span></p>
+</div>
+<div id="task-b" class="section level3">
+<h3>Task b)</h3>
+<p>With <span class="math inline">\(\beta = 0.01\)</span>, <span class="math inline">\(\gamma = 0.10\)</span>, <span class="math inline">\(\alpha = 0.005\)</span> we have the matrix:</p>
+<p>We further have the possible states {S,I,R} as a result of <span class="math inline">\(1 - \beta\)</span>, <span class="math inline">\(1
+- \gamma\)</span>, <span class="math inline">\(1 - \alpha\)</span> all
+being grater than <span class="math inline">\(0\)</span>. Which means
+that the chain in aperiodic.</p>
+<p>Further we have an finite, irreducible and aperiodic chain which
+means that we have a stationary distribution <span class="math inline">\(\pi = (\pi_S,\pi_I,\pi_R)\)</span>.</p>
+<p>If we further try to solve the equations <span class="math inline">\(\pi = \pi P\)</span> and <span class="math inline">\(\sum \pi_i = 1\)</span> which gives us the
+equations:</p>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjR3h2ZENoallYSnpLVnh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbnBsb3QoY2FycylcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
-toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and
-output will be saved alongside it (click the <em>Preview</em> button or
-press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the
-editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not
-run any R code chunks. Instead, the output of the chunk when it was last
-run in the editor is displayed.</p>
-<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMgVGFzayBhKQ0KDQpXZSBoYXZlIFMgPSBzdXNwZWN0aWJsZSBmb3IgZ2V0dGluZyBpbmZlY3RlZCwgSSA9IGluZmVjdGVkLCBSID0gcmVjb3ZlcmVkL2ltbXVuZVwNCkFmdGVyIHN0dWR5aW5nIHRoZSB0cmFuc2l0aW9uIHByb2JhYmlsaXR5IG1hdHJpeCB3ZSBjYW4gY29uY2x1ZGUgdGhhdCB0aGUgZGlmZmVyZW50IHBhcmFtZXRlcnMgcmVwcmVzZW50czpcDQokXGJldGEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBpbmZlY3RlZCAkUyBccmlnaHRhcnJvdyQgSVwkDQoNCiRcZ2FtbWEkOiBUaGUgcHJvYmFiaWxpdHkgb2YgZ2V0dGluZyBoZWFsdHkgJEkgXHJpZ2h0YXJyb3cgUiQNCg0KJFxhbHBoYSQ6IFRoZSBwcm9iYWJpbGl0eSBvZiBiZWluZyBub3QgYmVpbmcgaW1tdW5lIGFueW1vcmUgJFIgXHJpZ2h0YXJyb3cgUyQNCg0KIyMjIFRhc2sgYikNCg0KV2l0aCAkXGJldGEgPSAwLjAxJCwgJFxnYW1tYSA9IDAuMTAkLCAkXGFscGhhID0gMC4wMDUkIHdlIGhhdmUgdGhlIG1hdHJpeDoNCg0KV2UgZnVydGhlciBoYXZlIHRoZSBwb3NzaWJsZSBzdGF0ZXMge1MsSSxSfSBhcyBhIHJlc3VsdCBvZiAkMSAtIFxiZXRhJCwgJDEgLSBcZ2FtbWEkLCAkMSAtIFxhbHBoYSQgYWxsIGJlaW5nIGdyYXRlciB0aGFuICQwJC4gV2hpY2ggbWVhbnMgdGhhdCB0aGUgY2hhaW4gaW4gYXBlcmlvZGljLg0KDQpGdXJ0aGVyIHdlIGhhdmUgYW4gZmluaXRlLCBpcnJlZHVjaWJsZSBhbmQgYXBlcmlvZGljIGNoYWluIHdoaWNoIG1lYW5zIHRoYXQgd2UgaGF2ZSBhIHN0YXRpb25hcnkgZGlzdHJpYnV0aW9uICRccGkgPSAoXHBpX1MsXHBpX0ksXHBpX1IpJC4NCg0KSWYgd2UgZnVydGhlciB0cnkgdG8gc29sdmUgdGhlIGVxdWF0aW9ucyAkXHBpID0gXHBpIFAkIGFuZCAkXHN1bSBccGlfaSA9IDEkIHdoaWNoIGdpdmVzIHVzIHRoZSBlcXVhdGlvbnM6DQo=</div>
 
 
 

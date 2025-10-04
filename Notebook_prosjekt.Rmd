@@ -3,16 +3,22 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+### Task a)
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+We have S = suspectible for getting infected, I = infected, R = recovered/immune\
+After studying the transition probability matrix we can conclude that the different parameters represents:\
+$\beta$: The probability of getting infected $S \rightarrow$ I\$
 
-```{r}
-plot(cars)
-```
+$\gamma$: The probability of getting healty $I \rightarrow R$
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+$\alpha$: The probability of being not being immune anymore $R \rightarrow S$
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+### Task b)
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+With $\beta = 0.01$, $\gamma = 0.10$, $\alpha = 0.005$ we have the matrix:
+
+We further have the possible states {S,I,R} as a result of $1 - \beta$, $1 - \gamma$, $1 - \alpha$ all being grater than $0$. Which means that the chain in aperiodic.
+
+Further we have an finite, irreducible and aperiodic chain which means that we have a stationary distribution $\pi = (\pi_S,\pi_I,\pi_R)$.
+
+If we further try to solve the equations $\pi = \pi P$ and $\sum \pi_i = 1$ which gives us the equations:
